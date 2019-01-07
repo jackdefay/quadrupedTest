@@ -1,9 +1,26 @@
 #include <Arduino.h>
+#include <Servo.h>
+
+Servo horizShoulder;
+Servo vertShoulder;
+Servo elbow;
+
+int horizShoulderPos;
+int vertShoulderPos;
+int elbowPos;
+
+byte horizShoulderPin = 5;
+byte vertShoulderPin = 6;
+byte elbowPin = 10;
 
 void setup() {
-  // put your setup code here, to run once:
+    horizShoulder.attach(horizShoulderPin);
+    vertShoulder.attach(vertShoulderPin);
+    elbow.attach(elbowPin);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+    horizShoulderPos = 120;
+    horizShoulder.write(horizShoulderPos);
+    delay(500);
 }
